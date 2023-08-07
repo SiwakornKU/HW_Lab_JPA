@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class RestaurantService {
@@ -19,5 +20,9 @@ public class RestaurantService {
     public Restaurant create(Restaurant restaurant){
         Restaurant record = repository.save(restaurant);
         return record;
+    }
+
+    public Restaurant getRestaurantById(UUID id){
+        return repository.findById(id).get();
     }
 }

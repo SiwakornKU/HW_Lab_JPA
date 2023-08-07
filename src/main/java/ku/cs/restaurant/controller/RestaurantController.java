@@ -22,4 +22,9 @@ public class RestaurantController {
     public Restaurant create(@RequestBody Restaurant restaurant){
         return service.create(restaurant);
     }
+
+    @GetMapping("/restaurant/{id}")
+    public Restaurant getById(@PathVariable UUID id){
+        return service.getRestaurantById(id);
+    }
 }
